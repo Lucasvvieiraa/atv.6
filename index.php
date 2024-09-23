@@ -1,3 +1,17 @@
+<?php
+include 'db.php';
+
+$id = $_get['id'];
+
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
+}
+
+
+
+
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
