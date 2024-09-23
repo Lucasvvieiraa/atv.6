@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $horaAula = $_POST['horaAula'];
     $sala = $_POST['sala'];
 
-    // Função para adicionar professor, diário e aula
+    
     $stmt = $conn->prepare("INSERT INTO professor (nome) VALUES (?)");
     $stmt->bind_param("s", $professorNome);
     $stmt->execute();
