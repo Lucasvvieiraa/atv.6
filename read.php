@@ -23,7 +23,7 @@ $dados = getDados($conn);
     <table border="1">
         <tr>
             <th>Professor</th>
-            <th>Hora da Aula</th>
+            <th>Horário da Aula</th>
             <th>Sala</th>
             <th>Ações</th>
         </tr>

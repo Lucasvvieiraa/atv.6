@@ -8,17 +8,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $horaAula = $_POST['horaAula'];
     $sala = $_POST['sala'];
 
-    // Atualizar professor
+  
     $stmt = $conn->prepare("UPDATE professor SET nome = ? WHERE id = ?");
     $stmt->bind_param("si", $professorNome, $professorId);
     $stmt->execute();
 
-    // Atualizar diário
+
     $stmt = $conn->prepare("UPDATE diario SET hora_aula = ? WHERE id = ?");
     $stmt->bind_param("si", $horaAula, $diarioId);
     $stmt->execute();
 
-    // Atualizar aula
     $stmt = $conn->prepare("UPDATE aulas SET sala = ? WHERE diario_id = ?");
     $stmt->bind_param("si", $sala, $diarioId);
     $stmt->execute();

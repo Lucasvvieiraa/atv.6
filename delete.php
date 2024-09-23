@@ -4,12 +4,12 @@ include 'db.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $diarioId = $_POST['diarioId'];
 
-    // Deletar aula
+
     $stmt = $conn->prepare("DELETE FROM aulas WHERE diario_id = ?");
     $stmt->bind_param("i", $diarioId);
     $stmt->execute();
 
-    // Deletar diário
+
     $stmt = $conn->prepare("DELETE FROM diario WHERE id = ?");
     $stmt->bind_param("i", $diarioId);
     $stmt->execute();
