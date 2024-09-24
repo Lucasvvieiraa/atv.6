@@ -1,14 +1,13 @@
 <?php
-$servername = 'localhost';
-$username = 'root';
-$password = 'root';
-$dbname = 'crud_dupla';
+$host = 'localhost'; 
+$db = 'crud_dupla';
+$user = 'root';
+$pass = 'root';
 
-$conn = new mysqli($servername,$username,$password,$dbname);
-
-if($conn -> connect_error) {
-    die("Conexão falhou:" .$conn -> connect_error);
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Erro na conexão: " . $e->getMessage();
 }
-
 ?>
-
